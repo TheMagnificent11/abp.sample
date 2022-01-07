@@ -12,13 +12,10 @@ public static class PersonMapper
             throw new ArgumentNullException(nameof(personDto));
         }
 
-        var salutation = new Salutation();
-        salutation.SetId(personDto.SalutationId);
-
         var dob = personDto.DateOfBirth.ToDateOnly();
 
         var person = Person.Create(
-            salutation,
+            personDto.SalutationId,
             personDto.GivenName,
             personDto.MiddleNames,
             personDto.Surname,

@@ -27,17 +27,12 @@ public class Person : AuditedAggregateRoot<Guid>
     public IdentityUser User { get; protected set; }
 
     public static Person Create(
-        Salutation salutation,
+        SalutationType salutationType,
         string givenName,
         string middleNames,
         string surname,
         DateOnly dateOfBirth)
     {
-        if (salutation is null)
-        {
-            throw new ArgumentNullException(nameof(salutation));
-        }
-
         if (givenName is null)
         {
             throw new ArgumentNullException(nameof(givenName));
@@ -51,8 +46,7 @@ public class Person : AuditedAggregateRoot<Guid>
         return new Person
         {
             Id = Guid.NewGuid(),
-            SalutationId = salutation.Id,
-            Salutation = salutation,
+            SalutationId = salutationType,
             GivenName = givenName,
             MiddleNames = middleNames,
             Surname = surname,
