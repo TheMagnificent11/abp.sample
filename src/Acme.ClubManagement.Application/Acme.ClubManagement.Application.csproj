@@ -10,12 +10,14 @@
   <ItemGroup>
     <ProjectReference Include="..\Acme.ClubManagement.Domain\Acme.ClubManagement.Domain.csproj" />
     <ProjectReference Include="..\Acme.ClubManagement.Application.Contracts\Acme.ClubManagement.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Acme.ClubManagement.Shared\Acme.ClubManagement.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Volo.Abp.Account.Application" Version="5.0.1" />
     <PackageReference Include="Volo.Abp.Identity.Application" Version="5.0.1" />
     <PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="5.0.1" />
+    <PackageReference Include="Volo.Abp.FluentValidation" Version="5.0.1" />
     <PackageReference Include="Volo.Abp.TenantManagement.Application" Version="5.0.1" />
     <PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="5.0.1" />
     <PackageReference Include="Volo.Abp.SettingManagement.Application" Version="5.0.1" />
