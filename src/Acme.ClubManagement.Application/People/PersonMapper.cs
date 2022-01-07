@@ -5,7 +5,7 @@ namespace Acme.ClubManagement.People;
 
 public static class PersonMapper
 {
-    public static Person MapToDomain(this PersonDto personDto)
+    public static Person MapToDomain(this IPersonDto personDto)
     {
         if (personDto is null)
         {

@@ -9,6 +9,9 @@ public sealed class PersonMappingProfile : Profile
     {
         this.CreateMap<Person, PersonDto>();
 
+        this.CreateMap<SavePersonRequest, Person>()
+            .ConstructUsing(x => x.MapToDomain());
+
         this.CreateMap<PersonDto, Person>()
             .ConstructUsing(x => x.MapToDomain());
     }

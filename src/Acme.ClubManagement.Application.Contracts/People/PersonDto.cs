@@ -4,7 +4,7 @@ using Volo.Abp.Application.Dtos;
 
 namespace Acme.ClubManagement.People;
 
-public class PersonDto : AuditedEntityDto<Guid>
+public class PersonDto : AuditedEntityDto<Guid>, IPersonDto
 {
     public string GivenName { get; set; }
 

@@ -3,7 +3,7 @@ using Acme.ClubManagement.Enums;
 
 namespace Acme.ClubManagement.People;
 
-public class SavePersonRequest
+public class SavePersonRequest : IPersonDto
 {
     public string GivenName { get; set; }
 
