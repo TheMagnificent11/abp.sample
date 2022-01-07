@@ -38,6 +38,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E2E18914-ED8C-48BC-A3BF-EB4FDF5294B4}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		common.props = common.props
 	EndProjectSection
 EndProject
 Global
