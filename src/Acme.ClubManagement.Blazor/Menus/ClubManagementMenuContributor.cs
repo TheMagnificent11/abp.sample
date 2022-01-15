@@ -20,18 +20,10 @@ public class ClubManagementMenuContributor : IMenuContributor
     private static Task ConfigureMainMenuAsync(MenuConfigurationContext context)
     {
         var administration = context.Menu.GetAdministration();
-        var l = context.GetLocalizer<ClubManagementResource>();
+        var menuHelper = new MenuHelper(context.GetLocalizer<ClubManagementResource>());
 
-        context.Menu.Items.Insert(
-            0,
-            new ApplicationMenuItem(
-                ClubManagementMenus.Home,
-                l["Menu:Home"],
-                "/",
-                icon: "fas fa-home",
-                order: 0
-            )
-        );
+        context.Menu.Items.Insert(0, menuHelper.GetMenuItem(MenuHelper.MenuItems.Home));
+        context.Menu.AddItem(menuHelper.GetMenuItem(MenuHelper.MenuItems.People));
 
         if (MultiTenancyConsts.IsEnabled)
         {

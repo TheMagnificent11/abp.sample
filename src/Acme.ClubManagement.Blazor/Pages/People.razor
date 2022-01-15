@@ -1,0 +1,37 @@
+﻿@page "/people"
+
+@using Acme.ClubManagement.Localization
+@using Acme.ClubManagement.People
+@using Microsoft.Extensions.Localization
+@using Volo.Abp.Application.Dtos
+
+@inject IStringLocalizer<ClubManagementResource> Localizer
+
+@inherits AbpCrudPageBase<IPersonAppService, PersonDto, Guid, PagedAndSortedResultRequestDto, SavePersonRequest>
+
+<Card>
+    <CardHeader>
+        <h2>@Localizer["PageHeader:People"]</h2>
+    </CardHeader>
+    <CardBody>
+        <DataGrid TItem="PersonDto"
+                  Data="Entities"
+                  ReadData="OnDataGridReadAsync"
+                  TotalItems="TotalCount"
+                  ShowPager="true"
+                  PageSize="PageSize">
+            <DataGridColumns>
+                <DataGridColumn TItem="PersonDto"
+                                Field="@nameof(PersonDto.GivenName)"
+                                Caption="@Localizer["PeopleTable:GivenName"]">
+                </DataGridColumn>
+            </DataGridColumns>
+            <DataGridColumns>
+                <DataGridColumn TItem="PersonDto"
+                                Field="@nameof(PersonDto.Surname)"
+                                Caption="@Localizer["PeopleTable:Surname"]">
+                </DataGridColumn>
+            </DataGridColumns>
+        </DataGrid>
+    </CardBody>
+</Card>
