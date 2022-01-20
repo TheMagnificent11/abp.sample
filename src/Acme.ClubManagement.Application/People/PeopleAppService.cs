@@ -7,7 +7,7 @@ namespace Acme.ClubManagement.People;
 
 public class PeopleAppService :
     CrudAppService<Person, PersonDto, Guid, PagedAndSortedResultRequestDto, SavePersonRequest>,
-    IPersonAppService
+    IPeopleAppService
 {
     public PeopleAppService(IRepository<Person, Guid> repository)
         : base(repository)
